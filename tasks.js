@@ -107,7 +107,7 @@ function unknownCommand(c){
  * @returns {void}
  */
 function help(){
-  console.log('Possible command lines: hello, hello + " ", help, exit or quit')
+  console.log('Possible command lines: hello, hello + str, help, add + str, remove + int, exit or quit')
   }
 
 
