@@ -33,13 +33,22 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
+
 function onDataReceived(text) {
-  if (text === 'quit\n') {
+
+  let  helloVar = /hello/;
+  
+
+  if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
-  else if(text === 'hello\n'){
-    hello();
+  else if(helloVar.test(text)){
+    hello(text);
   }
+  else if(text === 'help\n') {
+    help();
+  }
+
   else{
     unknownCommand(text);
   }
@@ -58,14 +67,31 @@ function unknownCommand(c){
 }
 
 
+ 
+
+
+ /**
+ * prints Hello +" textReceived"
+ * 
+ *
+ * @param  {string} a the text received
+ * @returns {void}
+ */
+ function hello(a){
+  let value = a.replace(/ +/g," ");
+  console.log(value.trim() +'!');
+}
+
+
 /**
- * Says hello
+ * Displays possible command lines
  *
  * @returns {void}
  */
-function hello(){
-  console.log('hello!')
-}
+function help(){
+  console.log('Possible command lines: hello, hello + " ", help, exit or quit')
+  }
+
 
 
 /**
@@ -79,4 +105,4 @@ function quit(){
 }
 
 // The following line starts the application
-startApp("Jad Sarout")
+startApp("Lea Zouein")
