@@ -48,6 +48,10 @@ function onDataReceived(text) {
   else if(text === 'help\n') {
     help();
   }
+  else if(text==='list\n'){
+    list();
+    
+  }
 
   else{
     unknownCommand(text);
@@ -103,6 +107,27 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+
+
+/**
+ * Displays list
+ *
+ * @returns {void}
+ */
+
+
+let arraylist= ["eat","sleep","work"]
+
+ function list(){
+
+  for(let i = 0; i<arraylist.length; i++){
+    console.log((i+1)+":" + arraylist[i])
+  }
+}
+ 
+ 
+   
+
 
 // The following line starts the application
 startApp("Lea Zouein")
