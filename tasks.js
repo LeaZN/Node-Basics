@@ -52,11 +52,22 @@ function onDataReceived(text) {
     list();
     
   }
+  else if (text.split(' ')[0].trim() === 'add'){
+    add(text.split(' ')[1]);
+  }
 
   else{
     unknownCommand(text);
   }
 }
+
+
+
+
+
+
+
+
 
 
 /**
@@ -126,7 +137,12 @@ let arraylist= ["eat","sleep","work"]
 }
  
  
-   
+function add (text){
+  arraylist.push(text);
+  
+  }
+
+
 
 
 // The following line starts the application
